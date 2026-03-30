@@ -1,0 +1,243 @@
+{
+  "image_path": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/surface/s_4_Color.png",
+  "train_root": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/train",
+  "primary_detection_prompt": "milk. cup. plate. apple. hot dog. crop.",
+  "class_names": [
+    "apple",
+    "crop",
+    "cup",
+    "hotdog",
+    "milk",
+    "plate"
+  ],
+  "proker_beta": 2.427618555234665,
+  "proker_lambda": 0.1,
+  "siglip_model": "google/siglip-base-patch16-224",
+  "min_similarity": null,
+  "whitening_log_like_threshold": -9000.0,
+  "augment_epoch": 1,
+  "support_whitening_log_like_stats": {
+    "min": -794.3920288085938,
+    "max": -776.9292602539062,
+    "mean": -789.1116333007812
+  },
+  "classify_crop_shrink": 0.15,
+  "overlap_containment_ratio": 0.8,
+  "overlap_area_ratio": 1.35,
+  "override_prompts": [
+    "plate.",
+    "spoon."
+  ],
+  "override_box_threshold": 0.45,
+  "override_text_threshold": 0.2,
+  "override_iou": 0.3,
+  "override_containment": 0.6,
+  "override_detections": [
+    {
+      "bbox": [
+        802,
+        293,
+        878,
+        398
+      ],
+      "predicted_class": "spoon",
+      "class_confidence": 0.6198100447654724,
+      "classification_confidence": 0.6198100447654724,
+      "whitening_log_like": null,
+      "dino_label": "spoon",
+      "dino_confidence": 0.6198100447654724,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        598,
+        180,
+        815,
+        255
+      ],
+      "predicted_class": "plate",
+      "class_confidence": 0.5348734259605408,
+      "classification_confidence": 0.5348734259605408,
+      "whitening_log_like": null,
+      "dino_label": "plate",
+      "dino_confidence": 0.5348734259605408,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    }
+  ],
+  "detections": [
+    {
+      "bbox": [
+        515,
+        268,
+        803,
+        362
+      ],
+      "dino_label": "hot dog",
+      "dino_confidence": 0.7675188779830933,
+      "predicted_class": "hotdog",
+      "class_confidence": 0.1923731118440628,
+      "classification_confidence": 0.1923731118440628,
+      "whitening_log_like": -5622.6953125,
+      "classification_bbox": [
+        537,
+        275,
+        781,
+        355
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        598,
+        180,
+        815,
+        255
+      ],
+      "dino_label": "plate",
+      "dino_confidence": 0.6687608957290649,
+      "predicted_class": "plate",
+      "class_confidence": 0.17235563695430756,
+      "classification_confidence": 0.17235563695430756,
+      "whitening_log_like": -10465.05859375,
+      "classification_bbox": [
+        614,
+        186,
+        799,
+        249
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        565,
+        129,
+        867,
+        207
+      ],
+      "dino_label": "hot dog",
+      "dino_confidence": 0.6519523859024048,
+      "predicted_class": "hotdog",
+      "class_confidence": 0.1757287085056305,
+      "classification_confidence": 0.1757287085056305,
+      "whitening_log_like": -13478.9384765625,
+      "classification_bbox": [
+        588,
+        135,
+        844,
+        201
+      ],
+      "decision_source": "siglip",
+      "accepted": false
+    },
+    {
+      "bbox": [
+        883,
+        264,
+        1114,
+        373
+      ],
+      "dino_label": "apple",
+      "dino_confidence": 0.6133424043655396,
+      "predicted_class": "apple",
+      "class_confidence": 0.17296555638313293,
+      "classification_confidence": 0.17296555638313293,
+      "whitening_log_like": -10269.0458984375,
+      "classification_bbox": [
+        900,
+        272,
+        1097,
+        365
+      ],
+      "decision_source": "siglip",
+      "accepted": false
+    },
+    {
+      "bbox": [
+        713,
+        1,
+        821,
+        284
+      ],
+      "dino_label": "milk cup crop",
+      "dino_confidence": 0.3945951461791992,
+      "predicted_class": "cup",
+      "class_confidence": 0.17371559143066406,
+      "classification_confidence": 0.17371559143066406,
+      "whitening_log_like": -12646.97265625,
+      "classification_bbox": [
+        721,
+        22,
+        813,
+        263
+      ],
+      "decision_source": "siglip",
+      "accepted": false
+    }
+  ],
+  "accepted_detections": [
+    {
+      "bbox": [
+        515,
+        268,
+        803,
+        362
+      ],
+      "dino_label": "hot dog",
+      "dino_confidence": 0.7675188779830933,
+      "predicted_class": "hotdog",
+      "class_confidence": 0.1923731118440628,
+      "classification_confidence": 0.1923731118440628,
+      "whitening_log_like": -5622.6953125,
+      "classification_bbox": [
+        537,
+        275,
+        781,
+        355
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        802,
+        293,
+        878,
+        398
+      ],
+      "predicted_class": "spoon",
+      "class_confidence": 0.6198100447654724,
+      "classification_confidence": 0.6198100447654724,
+      "whitening_log_like": null,
+      "dino_label": "spoon",
+      "dino_confidence": 0.6198100447654724,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        598,
+        180,
+        815,
+        255
+      ],
+      "predicted_class": "plate",
+      "class_confidence": 0.5348734259605408,
+      "classification_confidence": 0.5348734259605408,
+      "whitening_log_like": null,
+      "dino_label": "plate",
+      "dino_confidence": 0.5348734259605408,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    }
+  ],
+  "elapsed_time_sec": 116.849,
+  "output_path": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_4_Color_siglip.jpg"
+}

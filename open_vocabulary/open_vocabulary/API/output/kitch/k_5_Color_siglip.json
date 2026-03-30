@@ -1,0 +1,265 @@
+{
+  "image_path": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/kitch/k_5_Color.png",
+  "train_root": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/train",
+  "primary_detection_prompt": "milk. cup. plate. apple. hot dog. crop.",
+  "class_names": [
+    "apple",
+    "crop",
+    "cup",
+    "hotdog",
+    "milk",
+    "plate"
+  ],
+  "proker_beta": 2.427618555234665,
+  "proker_lambda": 0.1,
+  "siglip_model": "google/siglip-base-patch16-224",
+  "min_similarity": null,
+  "whitening_log_like_threshold": -9000.0,
+  "augment_epoch": 1,
+  "support_whitening_log_like_stats": {
+    "min": -794.3920288085938,
+    "max": -776.9292602539062,
+    "mean": -789.1116333007812
+  },
+  "classify_crop_shrink": 0.15,
+  "overlap_containment_ratio": 0.8,
+  "overlap_area_ratio": 1.35,
+  "override_prompts": [
+    "plate.",
+    "spoon."
+  ],
+  "override_box_threshold": 0.45,
+  "override_text_threshold": 0.2,
+  "override_iou": 0.3,
+  "override_containment": 0.6,
+  "override_detections": [
+    {
+      "bbox": [
+        84,
+        287,
+        450,
+        476
+      ],
+      "predicted_class": "plate",
+      "class_confidence": 0.7345908284187317,
+      "classification_confidence": 0.7345908284187317,
+      "whitening_log_like": null,
+      "dino_label": "plate",
+      "dino_confidence": 0.7345908284187317,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        609,
+        234,
+        885,
+        371
+      ],
+      "predicted_class": "plate",
+      "class_confidence": 0.5806369185447693,
+      "classification_confidence": 0.5806369185447693,
+      "whitening_log_like": null,
+      "dino_label": "plate",
+      "dino_confidence": 0.5806369185447693,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    }
+  ],
+  "detections": [
+    {
+      "bbox": [
+        436,
+        421,
+        615,
+        612
+      ],
+      "dino_label": "apple",
+      "dino_confidence": 0.8927541375160217,
+      "predicted_class": "apple",
+      "class_confidence": 0.1938052624464035,
+      "classification_confidence": 0.1938052624464035,
+      "whitening_log_like": -4040.065185546875,
+      "classification_bbox": [
+        449,
+        435,
+        602,
+        598
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        415,
+        8,
+        524,
+        325
+      ],
+      "dino_label": "milk",
+      "dino_confidence": 0.8097793459892273,
+      "predicted_class": "milk",
+      "class_confidence": 0.1775580495595932,
+      "classification_confidence": 0.1775580495595932,
+      "whitening_log_like": -13504.017578125,
+      "classification_bbox": [
+        423,
+        32,
+        516,
+        301
+      ],
+      "decision_source": "siglip",
+      "accepted": false
+    },
+    {
+      "bbox": [
+        84,
+        287,
+        450,
+        477
+      ],
+      "dino_label": "plate",
+      "dino_confidence": 0.755212128162384,
+      "predicted_class": "plate",
+      "class_confidence": 0.18038906157016754,
+      "classification_confidence": 0.18038906157016754,
+      "whitening_log_like": -13074.7197265625,
+      "classification_bbox": [
+        111,
+        301,
+        423,
+        463
+      ],
+      "decision_source": "siglip",
+      "accepted": false
+    },
+    {
+      "bbox": [
+        972,
+        128,
+        1162,
+        431
+      ],
+      "dino_label": "cup",
+      "dino_confidence": 0.7180585861206055,
+      "predicted_class": "cup",
+      "class_confidence": 0.1871536821126938,
+      "classification_confidence": 0.1871536821126938,
+      "whitening_log_like": -5770.60302734375,
+      "classification_bbox": [
+        986,
+        151,
+        1148,
+        408
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        609,
+        234,
+        885,
+        371
+      ],
+      "dino_label": "plate",
+      "dino_confidence": 0.7057849168777466,
+      "predicted_class": "plate",
+      "class_confidence": 0.19067469239234924,
+      "classification_confidence": 0.19067469239234924,
+      "whitening_log_like": -5863.046875,
+      "classification_bbox": [
+        630,
+        244,
+        864,
+        361
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    }
+  ],
+  "accepted_detections": [
+    {
+      "bbox": [
+        436,
+        421,
+        615,
+        612
+      ],
+      "dino_label": "apple",
+      "dino_confidence": 0.8927541375160217,
+      "predicted_class": "apple",
+      "class_confidence": 0.1938052624464035,
+      "classification_confidence": 0.1938052624464035,
+      "whitening_log_like": -4040.065185546875,
+      "classification_bbox": [
+        449,
+        435,
+        602,
+        598
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        972,
+        128,
+        1162,
+        431
+      ],
+      "dino_label": "cup",
+      "dino_confidence": 0.7180585861206055,
+      "predicted_class": "cup",
+      "class_confidence": 0.1871536821126938,
+      "classification_confidence": 0.1871536821126938,
+      "whitening_log_like": -5770.60302734375,
+      "classification_bbox": [
+        986,
+        151,
+        1148,
+        408
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        84,
+        287,
+        450,
+        476
+      ],
+      "predicted_class": "plate",
+      "class_confidence": 0.7345908284187317,
+      "classification_confidence": 0.7345908284187317,
+      "whitening_log_like": null,
+      "dino_label": "plate",
+      "dino_confidence": 0.7345908284187317,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        609,
+        234,
+        885,
+        371
+      ],
+      "predicted_class": "plate",
+      "class_confidence": 0.5806369185447693,
+      "classification_confidence": 0.5806369185447693,
+      "whitening_log_like": null,
+      "dino_label": "plate",
+      "dino_confidence": 0.5806369185447693,
+      "classification_bbox": null,
+      "decision_source": "override_detection",
+      "accepted": true
+    }
+  ],
+  "elapsed_time_sec": 121.738,
+  "output_path": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_5_Color_siglip.jpg"
+}

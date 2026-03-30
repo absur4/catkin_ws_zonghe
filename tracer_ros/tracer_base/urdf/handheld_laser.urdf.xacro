@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot name="handheld_laser" xmlns:xacro="http://wiki.ros.org/xacro">
+  
+  <!-- 基础坐标系（可视为手持位置的坐标系） -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/> <!-- 用一个小球表示手持位置 -->
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- 雷达坐标系 -->
+  <link name="laser_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.1" radius="0.05"/> <!-- 雷达模型 -->
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- 雷达与手持位置的固定关节 -->
+  <joint name="base_to_laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_link"/>
+    <!-- 雷达相对手持位置的偏移（根据实际握持方式调整） -->
+    <!-- 例如：前方0.3米，上方0.1米 -->
+    <origin xyz="0.3 0 0.1" rpy="0 0 0"/>
+  </joint>
+
+</robot>
+    

@@ -1,0 +1,26 @@
+[INPUT]
+rgb=/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214602/scene_rgb.png
+depth=/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214602/scene_depth.png
+mask=/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214602/target_mask.png
+
+[INTRINSICS]
+fx=905.534912109375
+fy=905.7691650390625
+cx=656.93017578125
+cy=356.93890380859375
+depth_scale=0.001
+
+[STATS]
+valid_count=26148
+filtered_count=22782
+depth_raw_min=513
+depth_raw_median=515.0
+depth_raw_max=519
+
+[RESULT_MEDIAN_3D]
+position_cam=[0.005760, 0.055187, 0.515000]
+
+[RESULT_PIXEL_3D]
+pixel_uv=[667, 454]
+depth_raw=515
+position_cam_from_pixel=[0.005727, 0.055187, 0.515000]

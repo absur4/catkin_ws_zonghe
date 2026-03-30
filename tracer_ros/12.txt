@@ -1,0 +1,58 @@
+• 已按你的要求 不修改任何原文件，只新增带 3_14 后缀的新文件，并给出一套 IMU 融合
+  定位的启动流程。新文件如下：
+
+  - src/tracer_ros/tracer_base/launch/tracer_base_3_14.launch
+  - src/tracer_ros/tracer_bringup/launch/tracer_robot_base_3_14.launch
+  - src/tracer_ros/tracer_nav/param/ekf_odom_imu_3_14.yaml
+  - src/tracer_ros/tracer_nav/launch/ekf_odom_imu_3_14.launch
+  - src/tracer_ros/tracer_nav/launch/nav_dwa_3_14.launch
+  - src/robocup_navigation/launch/navigation_dwa_3_14.launch
+  - src/tracer_ros/read_sf3_14.md
+
+  核心思路：
+
+  - 底盘 tracer_base_node 的 TF 被重映射到 /tf_raw_3_14，避免污染导航 TF 树。
+
+  使用方法已写入 src/tracer_ros/read_sf3_14.md，按里面的 4 终端启动即可。
+  如果你想让我再加一个“一键启动”的 bringup_3_14.launch（底盘+雷达+导航一起启
+  动），回复 要 即可。
+› roslaunch livox_ros_driver2 msg_MID360.launch这个是你新增readme里面的指令，我
+  猜测是用来启动雷达的，但是它并不能代替我原先的mid360_to_laserscan吧。我原来的
+  关于雷达的作用是要压缩一定高度的点云的，这个不能实现吧
+
+
+• The mid360_to_laserscan tool is not a replacement for msg_MID360 but
+  complements it by converting pointclouds with a height filter. The new 3_14
+  navigation launch already includes mid360_to_laserscan, though users can
+  launch msg_MID360 separately if preferred. Guidance: use msg_MID360 for the
+  driver and mid360_to_laserscan for producing filtered laser scans. Offering to
+  suggest README updates and asking if the user wants these combined in the 3_14
+  launch.
+
+• 对，你理解得很对：
+  roslaunch livox_ros_driver2 msg_MID360.launch 只是启动雷达驱动，发布 /livox/
+  lidar 和 /livox/imu；它不能替代你原来的 mid360_to_laserscan.launch，因为后者里
+  面的 pointcloud_to_laserscan 才负责按高度裁剪并生成 /scan。
+
+  所以正确关系是：
+
+  - msg_MID360.launch：驱动雷达，产生点云 + IMU
+  - mid360_to_laserscan.launch：把点云裁剪高度范围并压成 /scan
+
+  在我新建的 nav_dwa_3_14.launch 里已经包含了：
+
+  <include file="$(find livox_ros_driver2)/launch_ROS1/
+  mid360_to_laserscan.launch" />
+
+  所以只要你启动 navigation_dwa_3_14.launch，就会自动跑 mid360_to_laserscan，高
+  度裁剪会生效。
+
+  如果你想“手动分开启动”，可以这样：
+
+  1. 雷达驱动
+     roslaunch livox_ros_driver2 msg_MID360.launch
+  2. 点云压成 /scan（含高度裁剪）
+     roslaunch livox_ros_driver2 mid360_to_laserscan.launch
+
+  如果你需要我把 read_sf3_14.md 里的启动步骤改成“分开启动雷达驱动 + 点云压缩”，
+  我可以只新建 read_sf3_14_v2.md，不改原文件。回复一句“改成分开启动”即可。

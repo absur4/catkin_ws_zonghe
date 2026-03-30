@@ -1,0 +1,61 @@
+songfei@songfei-OMEN-by-HP-Gaming-Laptop-16-k0xxx:~/catkin_ws/src$ python3 get_camera_params.py
+
+==============================
+Camera: ALIGNED DEPTH TO COLOR
+Resolution: 1280 x 720
+
+Intrinsic Matrix K:
+[904.050, 0, 649.606]
+[0, 903.095, 387.466]
+[0, 0, 1]
+
+fx = 904.0499267578125
+fy = 903.094970703125
+cx = 649.605712890625
+cy = 387.4659423828125
+
+Distortion Model: plumb_bob
+Distortion Coefficients: (0.0, 0.0, 0.0, 0.0, 0.0)
+==============================
+
+
+==============================
+Camera: COLOR CAMERA
+Resolution: 1280 x 720
+
+Intrinsic Matrix K:
+[904.050, 0, 649.606]
+[0, 903.095, 387.466]
+[0, 0, 1]
+
+fx = 904.0499267578125
+fy = 903.094970703125
+cx = 649.605712890625
+cy = 387.4659423828125
+
+Distortion Model: plumb_bob
+Distortion Coefficients: (0.0, 0.0, 0.0, 0.0, 0.0)
+==============================
+
+
+==============================
+Camera: DEPTH CAMERA
+Resolution: 848 x 480
+
+Intrinsic Matrix K:
+[425.243, 0, 422.707]
+[0, 425.243, 241.897]
+[0, 0, 1]
+
+fx = 425.2427978515625
+fy = 425.2427978515625
+cx = 422.70709228515625
+cy = 241.89675903320312
+
+Distortion Model: plumb_bob
+Distortion Coefficients: (0.0, 0.0, 0.0, 0.0, 0.0)
+==============================
+
+
+所有相机参数已经获取完成
+

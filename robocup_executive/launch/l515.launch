@@ -1,0 +1,36 @@
+<launch>
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+
+    <!-- 基本流 -->
+    <arg name="enable_color" value="true"/>
+    <arg name="enable_depth" value="true"/>
+    <arg name="enable_infra" value="true"/>
+
+    <!-- L515 推荐分辨率 -->
+    <arg name="color_width" value="1280"/>
+    <arg name="color_height" value="720"/>
+    <arg name="color_fps" value="30"/>
+
+    <arg name="depth_width" value="1024"/>
+    <arg name="depth_height" value="768"/>
+    <arg name="depth_fps" value="30"/>
+
+    <arg name="infra_width" value="1024"/>
+    <arg name="infra_height" value="768"/>
+    <arg name="infra_fps" value="30"/>
+
+    <!-- IMU -->
+    <arg name="enable_gyro" value="true"/>
+    <arg name="enable_accel" value="true"/>
+    <arg name="gyro_fps" value="200"/>
+    <arg name="accel_fps" value="200"/>
+    <arg name="unite_imu_method" value="copy"/>
+    <arg name="enable_sync" value="true"/>
+
+    <!-- 对齐与点云 -->
+    <arg name="align_depth" value="true"/>
+    <arg name="enable_pointcloud" value="true"/>
+    <arg name="pointcloud_texture_stream" value="RS2_STREAM_COLOR"/>
+
+  </include>
+</launch>

@@ -1,0 +1,22 @@
+# 视觉检测参数
+
+# Grounding DINO参数
+detection:
+  box_threshold: 0.35      # 边界框置信度阈值
+  text_threshold: 0.25     # 文本匹配阈值
+
+# 柜子层板检测参数
+shelf_detection:
+  num_shelves_hint: 4      # 预期层数（用于等分）
+  min_coverage: 0.4        # 层板线最小宽度覆盖率
+  cluster_min_gap: 100     # 层板线聚类最小间距（像素）
+
+# SAM 2分割参数
+segmentation:
+  use_sam: true            # 是否使用SAM进行精确分割
+  save_masks: false        # 是否保存分割掩码
+
+# 3D转换参数
+depth_processing:
+  median_filter_size: 5    # 深度中值滤波窗口大小
+  outlier_threshold: 0.05  # 离群点阈值（米）

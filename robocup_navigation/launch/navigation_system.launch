@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 导航系统Launch文件 -->
+  <!-- 启动底盘驱动、定位、路径规划和导航动作服务器 -->
+
+
+
+
+
+
+
+  <include file="$(find tracer_nav)/launch/nav_new.launch"/>
+
+
+
+  <!-- 加载预定义位置配置 -->
+  <rosparam file="$(find robocup_navigation)/config/locations.yaml" command="load" ns="navigation"/>
+
+  <!-- 启动导航动作服务器 -->
+  <node pkg="robocup_navigation" type="navigation_action_server.py" name="navigation_action_server" output="screen">
+    <param name="locations_file" value="$(find robocup_navigation)/config/locations.yaml"/>
+  </node>
+  
+  <rosparam file="$(find robocup_executive)/config/task_config.yaml" 
+            command="load" 
+            ns="pick_place_dry_run"/>
+
+  <!-- 启动位置管理器（可选） -->
+  <node pkg="robocup_navigation" type="location_manager.py" name="location_manager" output="screen" required="false"/>
+
+</launch>

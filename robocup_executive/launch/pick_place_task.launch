@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Pick and Place任务Launch文件 -->
+  <!-- 启动完整系统并执行Pick and Place任务状态机 -->
+
+  <!-- ========== 参数配置 ========== -->
+  <arg name="start_delay" default="15"/>
+  <arg name="use_rviz" default="true"/>
+  <arg name="use_smach_viewer" default="true"/>
+  <arg name="rviz_config" default="$(find robocup_executive)/config/robocup.rviz"/>
+
+  <!-- ========== 启动底层系统 ========== -->
+  <include file="$(find robocup_executive)/launch/system_bringup.launch">
+    <arg name="use_camera" value="true"/>
+    <arg name="use_navigation" value="true"/>
+    <arg name="use_manipulation" value="true"/>
+    <arg name="use_perception" value="true"/>
+  </include>
+
+  <!-- ========== 启动SMACH状态机（延迟启动，等待所有服务就绪） ========== -->
+  <node name="pick_place_task" pkg="robocup_executive" type="pick_place_task.py"
+        output="screen" launch-prefix="bash -c 'sleep $(arg start_delay); $0 $@'">
+    <!-- 在节点私有命名空间下加载参数，使 rospy.get_param('~xxx') 能正确读取 -->
+    <rosparam file="$(find robocup_executive)/config/task_config.yaml" command="load"/>
+    <param name="retry_attempts" value="3"/>
+  </node>
+
+  <!-- ========== 可视化工具 ========== -->
+
+  <!-- 启动SMACH可视化 -->
+  <node if="$(arg use_smach_viewer)" name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py" required="false"/>
+
+  <!-- 启动RViz可视化 -->
+  <group if="$(arg use_rviz)">
+    <node name="rviz" pkg="rviz" type="rviz"
+          args="-d $(arg rviz_config)" required="false" if="$(eval rviz_config != '')"/>
+    <node name="rviz" pkg="rviz" type="rviz" required="false" unless="$(eval rviz_config != '')"/>
+  </group>
+
+  <!-- ========== 日志和调试 ========== -->
+  <node pkg="rosbag" type="record" name="task_recorder"
+        args="-o /tmp/pick_place_task /tf /tf_static /camera/color/image_raw /joint_states"
+        required="false"/>
+
+</launch>

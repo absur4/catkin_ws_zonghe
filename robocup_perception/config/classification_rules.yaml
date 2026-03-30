@@ -1,0 +1,25 @@
+# 物品分类规则（对齐 RoboCup rulebook2026 §5.2）
+
+object_categories:
+  # 清洗类 → 洗碗机（规则书 §5.2 称"cleanable"：餐具 + 刀叉勺）
+  cleanable:
+    keywords:
+      - cup
+      - mug
+      - plate
+      - dish
+      - bowl
+      - spoon
+      - fork
+      - knife
+    destination: dishwasher
+
+  # 垃圾类 → 垃圾桶（关键词在 Setup Days 通过 rosparam 动态设置）
+  # 使用前执行: rosparam set /object_classifier/trash_keywords "[bottle]"
+  trash:
+    keywords: []        # 运行时由参数服务器覆盖
+    destination: trash_bin
+
+# 默认（其他所有物品） → 柜子，按相似性分组
+default_category: other
+default_destination: cabinet

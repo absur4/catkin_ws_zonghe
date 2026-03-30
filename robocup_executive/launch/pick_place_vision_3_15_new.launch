@@ -1,0 +1,24 @@
+<launch>
+  <arg name="use_image_view" default="false"/>
+
+  <!-- 启动虚拟导航动作服务器（不启真实导航） -->
+  <include file="$(find robocup_navigation)/launch/navigation_vision_3_15_new.launch"/>
+
+  <node pkg="robocup_executive" type="pick_place_vision.py" name="pick_place_vision" output="screen">
+    <rosparam file="$(find robocup_executive)/config/pick_place_vision_3_15_new.yaml" command="load"/>
+  </node>
+
+  <!-- 视觉检测可视化：订阅相机，发布带框图像 -->
+  <node pkg="robocup_perception" type="vision_bbox_viewer_3_15_new.py" name="vision_bbox_viewer" output="screen">
+    <rosparam file="$(find robocup_executive)/config/pick_place_vision_3_15_new.yaml" command="load"/>
+    <param name="rgb_topic" value="/camera/color/image_raw"/>
+    <param name="depth_topic" value="/camera/depth/image_rect_raw"/>
+    <param name="annotated_topic" value="/vision/annotated_image_3_15_new"/>
+    <param name="detection_rate_hz" value="1.0"/>
+  </node>
+
+  <!-- 可选：直接弹窗显示（需要 image_view 包） -->
+  <node if="$(arg use_image_view)" pkg="image_view" type="image_view" name="vision_bbox_view" output="screen" required="false">
+    <remap from="image" to="/vision/annotated_image_3_15_new"/>
+  </node>
+</launch>

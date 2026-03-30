@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 系统启动Launch文件 -->
+  <!-- 启动完整的RoboCup@Home系统：硬件+导航+操作+感知 -->
+
+  <!-- ========== 参数配置 ========== -->
+  <arg name="use_camera" default="true"/>
+  <arg name="use_navigation" default="true"/>
+  <arg name="use_manipulation" default="true"/>
+  <arg name="use_perception" default="true"/>
+  <arg name="align_depth" default="true"/>
+  <arg name="enable_pointcloud" default="true"/>
+
+  <!-- ========== 硬件层 ========== -->
+
+  <!-- 启动RealSense相机 -->
+  <include if="$(arg use_camera)" file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="align_depth" value="$(arg align_depth)"/>
+    <arg name="enable_pointcloud" value="$(arg enable_pointcloud)"/>
+    <arg name="color_width" value="1280"/>
+    <arg name="color_height" value="720"/>
+    <arg name="depth_width" value="1280"/>
+    <arg name="depth_height" value="720"/>
+    <arg name="color_fps" value="30"/>
+    <arg name="depth_fps" value="30"/>
+  </include>
+
+  <!-- ========== 导航层 ========== -->
+  <include if="$(arg use_navigation)" file="$(find robocup_navigation)/launch/navigation_system.launch"/>
+
+  <!-- ========== 操作层 ========== -->
+  <include if="$(arg use_manipulation)" file="$(find robocup_manipulation)/launch/manipulation_system.launch"/>
+
+  <!-- ========== 感知层 ========== -->
+  <include if="$(arg use_perception)" file="$(find robocup_perception)/launch/perception_system.launch"/>
+
+  <!-- ========== TF静态变换 ========== -->
+  <!-- 相机到底盘（需根据实际安装位置调整） -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="camera_to_base"
+        args="0.15 0 0.35 0 0 0 base_link camera_link"/>
+
+  <!-- 机械臂到底盘（需根据实际安装位置调整） -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="arm_to_base"
+        args="0 0 0.2 0 0 0 base_link piper_base_link"/>
+
+  <!-- ========== 系统监控 ========== -->
+  <node pkg="rqt_robot_monitor" type="rqt_robot_monitor" name="robot_monitor" required="false"/>
+
+</launch>

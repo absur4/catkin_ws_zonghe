@@ -1,0 +1,13 @@
+# Goal
+geometry_msgs/Pose target_pose
+ShelfLayer target_layer         # 可选目标层信息
+string place_strategy           # "gentle", "fast"
+---
+# Result
+bool success
+string message
+geometry_msgs/Pose placed_pose
+---
+# Feedback
+string current_phase            # "approaching", "lowering", "releasing", "retracting"
+float32 progress                # 0.0 ~ 1.0

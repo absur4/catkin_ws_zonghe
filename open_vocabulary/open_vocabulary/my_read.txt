@@ -1,0 +1,55 @@
+你这个仓库里主要有两组命令：根目录 README.md 的基础命令 + API/README.md 的三个业务脚本命令。我按“命
+  令在做什么 / 你要提供什么”给你逐条说明。
+
+  基础安装命令（根 README）
+
+  - pip install torch torchvision：装 PyTorch 与视觉库，给 DINO/SAM2 推理用。你要提供：正确的 CUDA 对
+    应源（你是 cu118）和 Python 版本（SAM2 需要 >=3.10）。参考 README.md:40
+  - pip install opencv-python supervision pycocotools：图像处理、可视化、掩码编码。你要提供：兼容的
+    numpy（建议在独立 conda 环境）。参考 README.md:41
+  - pip install hydra-core iopath timm transformers：模型配置、I/O、backbone、Transformer 依赖。参考
+    README.md:42
+  - cd Grounded-SAM-2 && pip install -e .：把 SAM-2 以可编辑模式安装（代码改动即时生效）。你要提供：
+    Grounded-SAM-2 目录存在且 Python>=3.10。参考 README.md:45
+  - pip install -e grounding_dino --no-build-isolation：安装 Grounding DINO 子包。你要提供：Grounded-
+    SAM-2/grounding_dino 路径正常。参考 README.md:49
+
+  开放词汇 API 命令（根 README）
+
+  - python grounding_dino_api.py --image ... --prompt ... --output ...：只做检测，输出框与置信度图。
+    必填：--image、--prompt、--output。参数定义在 API/grounding_dino_api.py:227
+  - python grounding_sam_api.py --image ... --prompt ... --output ...：检测+分割，输出 mask/标注图/
+    JSON。必填：--image、--prompt、--output(目录)。参数定义在 API/grounding_sam_api.py:373
+  - python example_usage.py：跑示例流程（DINO+SAM），默认读 ../Grounded-SAM-2/bag.jpg。你要提供：测试
+    图片存在。参考 README.md:93、API/example_usage.py:23
+
+  API/README 里的三个“业务脚本”命令
+
+  - closed_set_object_detector.py：先 DINO 检测，再 SigLIP+ProKeR 做闭集分类，并有 plate/spoon 覆盖逻
+    辑。你至少要提供：
+    --image 测试图、--train-root（按类别分文件夹的 support 图库）。核心参数见 API/
+    closed_set_object_detector.py:704
+  - cabinet_layers_2d.py：只做柜体2D检测与层板线分层。你至少要提供：
+    --image、--output，可选 --camera-param-file 或手动 --fx --fy --cx --cy。参数见 API/
+    cabinet_layers_2d.py:18
+  - cabinet_planes_placement_3d.py：柜体2D分层 + 深度重建平面 + 放置点。你至少要提供：
+    --image、--depth、--output、相机内参（文件或 fx/fy/cx/cy）。参数见 API/
+    cabinet_planes_placement_3d.py:50
+
+  你需要提前准备的文件
+
+  - 模型权重：Grounded-SAM-2/checkpoints/sam2.1_hiera_large.pt、Grounded-SAM-2/gdino_checkpoints/
+    groundingdino_swint_ogc.pth（缺了会启动失败）。见 README.md:149
+  - 文本提示词格式：小写英文、以 . 结尾、多个类别用 .  分隔。见 README.md:141
+  - 闭集任务专有：train_root/class_x/*.jpg 这种目录结构（每类一个目录）。见 API/
+    closed_set_object_detector.py:705
+
+  我帮你发现的两个文档坑
+
+  - API/README.md 里的命令是作者本机绝对路径（/Users/...）和环境名 IND，你需要改成你自己的路径/环境。
+    见 API/README.md:108
+  - 根 README 提到 python API/test_api.py，但当前仓库没有这个文件（会报找不到）。见 README.md:93
+
+  如果你愿意，我可以下一步直接按你机器路径给你生成一套“可直接粘贴运行”的命令（ganzhi 环境版，含 2D/3D
+  柜体两个脚本）。
+

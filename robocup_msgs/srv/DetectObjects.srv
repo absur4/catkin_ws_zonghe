@@ -1,0 +1,9 @@
+# 物体检测服务
+string[] target_classes         # 目标物品类别列表 (如 ["cup", "plate", "spoon"])
+sensor_msgs/Image rgb_image     # RGB图像
+sensor_msgs/Image depth_image   # 深度图像
+float32 confidence_threshold    # 置信度阈值 (0.0-1.0)
+---
+DetectedObjectArray detected_objects
+bool success
+string message

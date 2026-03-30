@@ -1,0 +1,32 @@
+{
+  "run_id": "20260329_214754",
+  "run_dir": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754",
+  "scene_rgb": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/scene_rgb.png",
+  "scene_depth": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/scene_depth.png",
+  "target_class_requested": "cell phone",
+  "selection_rule": "largest_area",
+  "selected_detection": {
+    "instance_id": 2,
+    "class_name": "cell phone",
+    "conf": 0.7823,
+    "mask_area_pixels": 22963,
+    "mask_path": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/seg/mask_02_cell phone.png",
+    "target_mask": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/target_mask.png"
+  },
+  "camera_intrinsics": {
+    "fx": 905.534912109375,
+    "fy": 905.7691650390625,
+    "cx": 656.93017578125,
+    "cy": 356.93890380859375,
+    "depth_scale": 0.001
+  },
+  "position_cam": {
+    "x": 0.004193,
+    "y": 0.030693,
+    "z": 0.535
+  },
+  "position_result_txt": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/position/position_result.txt",
+  "position_debug_png": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/position/position_debug.png",
+  "seg_summary_txt": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/seg/summary.txt",
+  "seg_overlay_jpg": "/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214754/seg/result_overlay.jpg"
+}

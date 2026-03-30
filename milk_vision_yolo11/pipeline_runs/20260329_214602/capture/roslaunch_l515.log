@@ -1,0 +1,67 @@
+[0m[INFO] [1774791963.677055324]: Initializing nodelet with 16 worker threads.[0m
+[0m[INFO] [1774791963.745448118]: RealSense ROS v2.3.2[0m
+[0m[INFO] [1774791963.745465849]: Built with LibRealSense v2.50.0[0m
+[0m[INFO] [1774791963.745472053]: Running with LibRealSense v2.50.0[0m
+[0m[INFO] [1774791963.764797406]:  [0m
+ 29/03 21:46:04,156 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 300, error: Success, number: 0
+ 29/03 21:46:04,211 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 300, error: Success, number: 0
+ 29/03 21:46:04,266 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 300, error: Success, number: 0
+[0m[INFO] [1774791964.344605230]: Device with serial number f1272256 was found.
+[0m
+[0m[INFO] [1774791964.344623504]: Device with physical ID 4-1-2 was found.[0m
+[0m[INFO] [1774791964.344627740]: Device with name Intel RealSense L515 was found.[0m
+[0m[INFO] [1774791964.344826949]: Device with port number 4-1 was found.[0m
+[0m[INFO] [1774791964.344835553]: Device USB type: 3.2[0m
+[0m[INFO] [1774791964.346318357]: getParameters...[0m
+[0m[INFO] [1774791964.364095285]: setupDevice...[0m
+[0m[INFO] [1774791964.364114128]: JSON file is not provided[0m
+[0m[INFO] [1774791964.364124709]: ROS Node Namespace: camera[0m
+[0m[INFO] [1774791964.364138253]: Device Name: Intel RealSense L515[0m
+[0m[INFO] [1774791964.364148630]: Device Serial No: f1272256[0m
+[0m[INFO] [1774791964.364159481]: Device physical port: 4-1-2[0m
+[0m[INFO] [1774791964.364170241]: Device FW version: 01.05.08.01[0m
+[0m[INFO] [1774791964.364180800]: Device Product ID: 0x0B64[0m
+[0m[INFO] [1774791964.364191427]: Enable PointCloud: On[0m
+[0m[INFO] [1774791964.364201423]: Align Depth: On[0m
+[0m[INFO] [1774791964.364212270]: Sync Mode: On[0m
+[0m[INFO] [1774791964.364248992]: Device Sensors: [0m
+[0m[INFO] [1774791964.427578734]: L500 Depth Sensor was found.[0m
+[0m[INFO] [1774791964.439636927]: RGB Camera was found.[0m
+[0m[INFO] [1774791964.439734929]: Motion Module was found.[0m
+[0m[INFO] [1774791964.439959889]: Add Filter: pointcloud[0m
+[0m[INFO] [1774791964.440287242]: num_filters: 2[0m
+[0m[INFO] [1774791964.440296090]: Setting Dynamic reconfig parameters.[0m
+[0m[INFO] [1774791965.592238443]: Done Setting Dynamic reconfig parameters.[0m
+[0m[INFO] [1774791965.593095405]: depth stream is enabled - width: 1024, height: 768, fps: 30, Format: Z16[0m
+[0m[INFO] [1774791965.593533557]: infra stream is enabled - width: 1024, height: 768, fps: 30, Format: Y8[0m
+[0m[INFO] [1774791965.594647275]: color stream is enabled - width: 1280, height: 720, fps: 30, Format: RGB8[0m
+[0m[INFO] [1774791965.598107742]: gyro stream is enabled - fps: 200[0m
+[0m[INFO] [1774791965.598125253]: accel stream is enabled - fps: 200[0m
+[0m[INFO] [1774791965.598138028]: setupPublishers...[0m
+[0m[INFO] [1774791965.600000855]: Expected frequency for depth = 30.00000[0m
+[0m[INFO] [1774791965.631037630]: Expected frequency for infra = 30.00000[0m
+[0m[INFO] [1774791965.647064800]: Expected frequency for color = 30.00000[0m
+[0m[INFO] [1774791965.657950425]: Expected frequency for aligned_depth_to_color = 30.00000[0m
+[0m[INFO] [1774791965.666994247]: Start publisher IMU[0m
+[0m[INFO] [1774791965.667792960]: setupStreams...[0m
+ 29/03 21:46:05,847 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 300, error: Resource temporarily unavailable, number: b
+ 29/03 21:46:05,970 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 300, error: Resource temporarily unavailable, number: b
+ 29/03 21:46:06,022 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 300, error: Resource temporarily unavailable, number: b
+ 29/03 21:46:06,075 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 300, error: Resource temporarily unavailable, number: b
+ 29/03 21:46:06,228 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:06,278 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:06,330 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:06,381 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:06,431 WARNING [140369980249856] (ds5-motion.cpp:473) IMU Calibration is not available, default intrinsic and extrinsic will be used.
+ 29/03 21:46:07,664 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+[33m[WARN] [1774791967.669753856]: [0m
+[33m[WARN] [1774791967.669808120]: frame's time domain is HARDWARE_CLOCK. Timestamps may reset periodically.[0m
+[0m[INFO] [1774791967.684925337]: SELECTED BASE:Depth, 0[0m
+ 29/03 21:46:07,715 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:07,766 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:07,817 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+[0m[INFO] [1774791967.869655060]: RealSense Node Is Up![0m
+ 29/03 21:46:08,417 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:08,876 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:09,668 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11
+ 29/03 21:46:10,920 WARNING [140369955071744] (messenger-libusb.cpp:42) control_transfer returned error, index: 768, error: Resource temporarily unavailable, number: 11

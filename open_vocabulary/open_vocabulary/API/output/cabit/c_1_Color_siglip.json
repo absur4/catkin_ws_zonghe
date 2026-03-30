@@ -1,0 +1,174 @@
+{
+  "image_path": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/cabit/c_1_Color.png",
+  "train_root": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/train",
+  "primary_detection_prompt": "milk. cup. plate. apple. hot dog. crop.",
+  "class_names": [
+    "apple",
+    "crop",
+    "cup",
+    "hotdog",
+    "milk",
+    "plate"
+  ],
+  "proker_beta": 2.427618555234665,
+  "proker_lambda": 0.1,
+  "siglip_model": "google/siglip-base-patch16-224",
+  "min_similarity": null,
+  "whitening_log_like_threshold": -9000.0,
+  "augment_epoch": 1,
+  "support_whitening_log_like_stats": {
+    "min": -794.3920288085938,
+    "max": -776.9292602539062,
+    "mean": -789.1116333007812
+  },
+  "classify_crop_shrink": 0.15,
+  "overlap_containment_ratio": 0.8,
+  "overlap_area_ratio": 1.35,
+  "override_prompts": [
+    "plate.",
+    "spoon."
+  ],
+  "override_box_threshold": 0.45,
+  "override_text_threshold": 0.2,
+  "override_iou": 0.3,
+  "override_containment": 0.6,
+  "override_detections": [],
+  "detections": [
+    {
+      "bbox": [
+        688,
+        348,
+        747,
+        472
+      ],
+      "dino_label": "milk",
+      "dino_confidence": 0.5082073211669922,
+      "predicted_class": "cup",
+      "class_confidence": 0.17425653338432312,
+      "classification_confidence": 0.17425653338432312,
+      "whitening_log_like": -14132.2919921875,
+      "classification_bbox": [
+        692,
+        357,
+        743,
+        463
+      ],
+      "decision_source": "siglip",
+      "accepted": false
+    },
+    {
+      "bbox": [
+        443,
+        571,
+        520,
+        718
+      ],
+      "dino_label": "milk",
+      "dino_confidence": 0.4532468914985657,
+      "predicted_class": "milk",
+      "class_confidence": 0.19408977031707764,
+      "classification_confidence": 0.19408977031707764,
+      "whitening_log_like": -5436.8046875,
+      "classification_bbox": [
+        449,
+        582,
+        514,
+        707
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        636,
+        164,
+        672,
+        236
+      ],
+      "dino_label": "cup",
+      "dino_confidence": 0.37320786714553833,
+      "predicted_class": "cup",
+      "class_confidence": 0.17255054414272308,
+      "classification_confidence": 0.17255054414272308,
+      "whitening_log_like": -14401.189453125,
+      "classification_bbox": [
+        639,
+        169,
+        669,
+        231
+      ],
+      "decision_source": "siglip",
+      "accepted": false
+    },
+    {
+      "bbox": [
+        274,
+        300,
+        434,
+        474
+      ],
+      "dino_label": "milk",
+      "dino_confidence": 0.282710462808609,
+      "predicted_class": "crop",
+      "class_confidence": 0.17484159767627716,
+      "classification_confidence": 0.17484159767627716,
+      "whitening_log_like": -8656.900390625,
+      "classification_bbox": [
+        286,
+        313,
+        422,
+        461
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    }
+  ],
+  "accepted_detections": [
+    {
+      "bbox": [
+        443,
+        571,
+        520,
+        718
+      ],
+      "dino_label": "milk",
+      "dino_confidence": 0.4532468914985657,
+      "predicted_class": "milk",
+      "class_confidence": 0.19408977031707764,
+      "classification_confidence": 0.19408977031707764,
+      "whitening_log_like": -5436.8046875,
+      "classification_bbox": [
+        449,
+        582,
+        514,
+        707
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    },
+    {
+      "bbox": [
+        274,
+        300,
+        434,
+        474
+      ],
+      "dino_label": "milk",
+      "dino_confidence": 0.282710462808609,
+      "predicted_class": "crop",
+      "class_confidence": 0.17484159767627716,
+      "classification_confidence": 0.17484159767627716,
+      "whitening_log_like": -8656.900390625,
+      "classification_bbox": [
+        286,
+        313,
+        422,
+        461
+      ],
+      "decision_source": "siglip",
+      "accepted": true
+    }
+  ],
+  "elapsed_time_sec": 28.138,
+  "output_path": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabit/c_1_Color_siglip.jpg"
+}

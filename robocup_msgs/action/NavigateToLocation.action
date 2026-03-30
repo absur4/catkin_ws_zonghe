@@ -1,0 +1,12 @@
+# Goal
+string target_location          # "kitchen", "dishwasher", "cabinet", "trash_bin"
+geometry_msgs/Pose target_pose  # 可选精确目标位姿
+---
+# Result
+bool success
+string message
+geometry_msgs/Pose final_pose
+---
+# Feedback
+float32 distance_remaining
+string current_status

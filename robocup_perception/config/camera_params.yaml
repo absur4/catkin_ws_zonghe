@@ -1,0 +1,16 @@
+# RealSense D435 1280x720分辨率相机内参
+# 注意：这些是示例值，需要通过相机标定获取实际值
+
+camera_intrinsics:
+  fx: 1230.0    # 焦距x (像素)
+  fy: 922.5     # 焦距y (像素)
+  cx: 640.0     # 主点x (像素)
+  cy: 360.0     # 主点y (像素)
+
+camera_frame: camera_color_optical_frame
+depth_scale: 0.001  # 深度单位：毫米转米 (RealSense默认)
+
+# 有效深度范围
+depth_range:
+  min: 0.1  # 最小深度 (米)
+  max: 5.0  # 最大深度 (米)

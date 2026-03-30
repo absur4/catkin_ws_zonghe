@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find tracer_nav)/launch/nav_teb_3_15.launch"/>
+
+  <rosparam file="$(find robocup_navigation)/config/locations.yaml" command="load" ns="navigation"/>
+
+  <node pkg="robocup_navigation" type="navigation_action_server.py" name="navigation_action_server" output="screen">
+    <param name="locations_file" value="$(find robocup_navigation)/config/locations.yaml"/>
+  </node>
+
+  <rosparam file="$(find robocup_executive)/config/task_config.yaml"
+            command="load"
+            ns="pick_place_dry_run"/>
+
+  <node pkg="robocup_navigation" type="location_manager.py" name="location_manager" output="screen" required="false"/>
+</launch>

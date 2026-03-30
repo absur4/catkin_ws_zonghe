@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robocup_manipulation</name>
+  <version>1.0.0</version>
+  <description>Manipulation module with MoveIt and Piper arm integration</description>
+  <maintainer email="user@todo.todo">User</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>actionlib</depend>
+  <depend>moveit_commander</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>control_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>piper_msgs</depend>
+  <depend>robocup_msgs</depend>
+</package>

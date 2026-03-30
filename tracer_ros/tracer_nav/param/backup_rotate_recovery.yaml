@@ -1,0 +1,5 @@
+backup_distance: 0.3        # 后退距离（米）
+backup_velocity: -0.1       # 后退速度（m/s，负值）
+backup_duration: 3.0        # 最大后退时间（秒）
+rotate_velocity: 0.5        # 旋转速度（rad/s）
+rotate_duration: 6.28       # 旋转时间（秒，~2π=1圈）

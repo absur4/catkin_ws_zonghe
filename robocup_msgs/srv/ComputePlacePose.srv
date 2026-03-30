@@ -1,0 +1,10 @@
+# 放置姿态计算服务
+ShelfLayer target_layer         # 目标层（cabinet时设置）
+DetectedObjectArray existing_objects  # 已有物品
+float32 object_width            # 待放置物品宽度 (米)
+float32 object_depth            # 待放置物品深度 (米)
+string destination              # 放置目标类型 (cabinet/dishwasher/trash_bin)
+---
+geometry_msgs/Pose place_pose
+bool success
+string message

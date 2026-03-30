@@ -1,0 +1,15 @@
+# clear_costmap_recovery.yaml
+reset_distance: 3.0
+# 要清理的层，通常清理静态层以外的所有层
+layer_names:
+  - "obstacle_layer"
+  - "inflation_layer"
+# 是否在清理前将机器人姿态纳入考虑
+force_updating: true
+# 要清理的区域（相对于机器人坐标系）
+clearable_areas:
+  - # 第一个区域（矩形）
+    x_min: -2.0
+    x_max: 2.0
+    y_min: -2.0
+    y_max: 2.0

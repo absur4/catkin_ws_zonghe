@@ -1,0 +1,7 @@
+# 抓取姿态计算服务
+DetectedObject target_object
+string grasp_type               # "top_down", "side", "front", "adaptive"
+---
+GraspPose grasp_pose
+bool success
+string message

@@ -1,0 +1,44 @@
+# 机械臂预定义姿态 (关节角度，弧度)
+
+named_poses:
+  # 初始姿态
+  home:
+    joint_values: [0.0, -0.5, 0.5, 0.0, 1.0, 0.0]
+    description: "机械臂初始/休息姿态"
+
+  # 运输姿态（夹持物品后移动）
+  transport:
+    joint_values: [0.0, -1.0, 1.2, 0.0, 0.8, 0.0]
+    description: "夹持物品后的安全运输姿态"
+
+  # 扫描姿态（俯视桌面）
+  scan:
+    joint_values: [0.0, 0.0, 0.5, 0.0, 0.5, 0.0]
+    description: "相机俯视桌面进行扫描"
+
+  # 准备抓取姿态
+  pre_pick:
+    joint_values: [0.0, -0.3, 0.3, 0.0, 0.8, 0.0]
+    description: "抓取前的准备姿态"
+
+# 夹爪参数
+gripper_params:
+  max_width: 0.07       # 最大开度（米）
+  min_width: 0.0        # 最小开度（米）
+  default_width: 0.05   # 默认开度（米）
+  default_effort: 50.0  # 默认力度
+  close_effort: 100.0   # 闭合力度
+  open_effort: 30.0     # 打开力度
+
+# 运动规划参数
+planning:
+  planning_time: 5.0                    # 规划时间限制（秒）
+  num_planning_attempts: 10             # 规划尝试次数
+  max_velocity_scaling_factor: 0.5      # 速度缩放因子
+  max_acceleration_scaling_factor: 0.5  # 加速度缩放因子
+
+# 抓取策略参数
+grasp:
+  approach_distance: 0.15   # 预抓取距离（米）
+  retreat_distance: 0.15    # 后退距离（米）
+  lift_height: 0.10         # 抓取后抬升高度（米）

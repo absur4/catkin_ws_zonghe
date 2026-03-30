@@ -1,0 +1,20 @@
+GlobalPlanner:
+  allow_unknown: False
+  default_tolerance: 0.2
+  visualize_potential: true  # 改为 true，可以在 RViz 里看到彩色的势场图，方便排错
+  
+  use_dijkstra: true         # 保持 Dijkstra，寻找全局最优解
+  use_quadratic: true
+  use_grid_path: false
+  old_navfn_behavior: false  # 严禁使用旧版贴墙逻辑
+
+  meter_scoring: true
+  lethal_cost: 253
+  
+  # === 核心居中参数 ===
+  neutral_cost: 40           # 从 80 降到 50。基础移动成本降低，让它更愿意绕远路（走中间）而不是贴墙走直线
+  cost_factor: 5.0           # 保持 3.0。与你刚才在 costmap_common 设定的高系数结合，产生强烈的“斥墙”效应
+  
+  publish_potential: true
+  orientation_mode: 1        # 【重点】从 0 改为 1。让全局路径带有指向前方的方向，引导底盘车头对准前方，而不是横着漂移
+  orientation_window_size: 1

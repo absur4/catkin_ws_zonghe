@@ -1,0 +1,33 @@
+{
+  "cabinet": {
+    "bbox": [
+      3,
+      2,
+      1277,
+      717
+    ]
+  },
+  "shelf_lines_y": [
+    197,
+    609
+  ],
+  "shelf_layers": [
+    {
+      "layer": 1,
+      "y_top": 2,
+      "y_bottom": 197
+    },
+    {
+      "layer": 2,
+      "y_top": 197,
+      "y_bottom": 609
+    },
+    {
+      "layer": 3,
+      "y_top": 609,
+      "y_bottom": 717
+    }
+  ],
+  "num_layers": 3,
+  "objects": []
+}

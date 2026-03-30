@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 操作系统Launch文件 -->
+  <!-- 启动机械臂驱动、MoveIt、夹爪控制和抓取/放置动作服务器 -->
+
+  <!-- 参数配置 -->
+  <arg name="can_port" default="can0"/>
+  <arg name="auto_enable" default="true"/>
+  <arg name="gripper_val_mutiple" default="2"/>
+  <arg name="use_moveit" default="true"/>
+
+  <!-- 启动Piper机械臂驱动 -->
+  <include file="$(find piper)/launch/start_single_piper.launch">
+    <arg name="can_port" value="$(arg can_port)"/>
+    <arg name="auto_enable" value="$(arg auto_enable)"/>
+    <arg name="gripper_val_mutiple" value="$(arg gripper_val_mutiple)"/>
+  </include>
+
+  <!-- 启动MoveIt运动规划 -->
+  <include if="$(arg use_moveit)" file="$(find piper_with_gripper_moveit)/launch/move_group.launch">
+    <arg name="publish_monitored_planning_scene" value="true"/>
+  </include>
+
+  <!-- 加载机械臂配置参数 -->
+  <rosparam file="$(find robocup_manipulation)/config/arm_poses.yaml" command="load" ns="manipulation"/>
+  <rosparam file="$(find robocup_manipulation)/config/gripper_params.yaml" command="load" ns="manipulation"/>
+
+  <!-- 启动抓取动作服务器 -->
+  <node pkg="robocup_manipulation" type="pick_action_server.py" name="pick_action_server" output="screen"/>
+
+  <!-- 启动放置动作服务器 -->
+  <node pkg="robocup_manipulation" type="place_action_server.py" name="place_action_server" output="screen"/>
+
+  <!-- 启动操作管理器（可选） -->
+  <node pkg="robocup_manipulation" type="manipulation_manager.py" name="manipulation_manager" output="screen" required="false"/>
+
+</launch>

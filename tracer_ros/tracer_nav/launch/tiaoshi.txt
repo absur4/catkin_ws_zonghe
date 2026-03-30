@@ -1,0 +1,2 @@
+现在的nav_new不行，还是得用catkin里面的wpr_simulation/wpb_demo_nav才可以，具体查看nav_test,发现就是把之前那什么dwa全部不用，就只用   <param name="base_global_planner" value="global_planner/GlobalPlanner" /> 
+    <param name="base_local_planner" value="wpbh_local_planner/WpbhLocalPlanner" />加上四个代价文件就可以用了，

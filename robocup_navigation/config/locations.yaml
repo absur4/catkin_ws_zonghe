@@ -1,0 +1,85 @@
+# 预定义位置 (地图坐标系)
+# 注意：这些坐标需要根据实际环境地图调整！
+
+locations:
+  # 厨房
+  kitchen:
+    x: -1.342       #2.9
+    y: -3.518    #-0.545
+    theta: 3.14       # 朝向 (弧度)
+    description: "厨房桌面位置"
+
+  # 洗碗机
+  dishwasher:
+    x: 1.534
+    y: -3.570
+    theta: 1.57       # 90度
+    description: "洗碗机前方位置"
+
+  # 储物柜
+  cabinet:
+    x: 1.277
+    y: -4.315
+    theta: -1.57
+    description: "储物柜前方位置"
+
+  # 垃圾桶
+  trash_bin:
+    x: -0.348    #2.373
+    y: -2.245     #0
+    theta: 1.475
+    description: "垃圾桶旁边位置"
+
+  # 厨房台面（规则书 §5.2：bowl/spoon 存放处）
+  kitchen_surface:
+    x: -1.180
+    y: -2.588
+    theta: 3.14
+    description: "厨房台面，存放 bowl/spoon"
+
+  # 餐桌（规则书 §5.2：早餐摆放目标位置）
+  dining_table:
+    x: -1.342       #2.9
+    y: -3.518    #-0.545
+    theta: 3.14       # 朝向 (弧度)
+    description: "餐桌，用于摆放早餐（bowl/spoon/cereal/milk）"
+
+  # 门口中间点（A -> 目标）
+  mid_1_1:
+    x: 2.08
+    y: -1.538
+    theta: -1.57
+    description: "门口中间点1（正向）"
+
+  mid_1_2:
+    x: 2.08
+    y: -3.395
+    theta: -1.57
+    description: "门口中间点2（正向）"
+
+  # 门口中间点（目标 -> A）
+  mid_2_1:
+    x: 2.08
+    y: -3.395
+    theta: 1.57
+    description: "门口中间点1（反向）"
+
+  mid_2_2:
+    x: 2.08
+    y: -1.538
+    theta: 1.57
+    description: "门口中间点2（反向）"
+
+  # 初始位置（可选）
+  home:
+    x: 0.0
+    y: 0.0
+    theta: 0.0
+    description: "机器人初始位置"
+
+# 导航参数
+navigation:
+  goal_tolerance:
+    xy: 0.05           # 位置容差（米）
+    yaw: 0.1          # 朝向容差（弧度）
+  timeout: 120.0      # 导航超时（秒）

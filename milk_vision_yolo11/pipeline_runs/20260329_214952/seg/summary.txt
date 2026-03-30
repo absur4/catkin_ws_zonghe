@@ -1,0 +1,3 @@
+instance 0: class=laptop, conf=0.8977, box=[0.8, 36.1, 456.8, 346.3], mask_area_pixels=123809, mask_path=/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214952/seg/mask_00_laptop.png
+instance 1: class=cell phone, conf=0.6941, box=[881.8, 160.6, 1023.2, 296.5], mask_area_pixels=11879, mask_path=/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214952/seg/mask_01_cell phone.png
+instance 2: class=person, conf=0.5401, box=[551.2, 2.8, 1008.4, 148.2], mask_area_pixels=50775, mask_path=/home/songfei/catkin_ws/src/milk_vision_yolo11/pipeline_runs/20260329_214952/seg/mask_02_person.png

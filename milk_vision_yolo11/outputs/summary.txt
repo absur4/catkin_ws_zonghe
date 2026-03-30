@@ -1,0 +1,1 @@
+instance 0: class=cell phone, conf=0.5855, box=[499.4, 141.8, 614.6, 490.2], mask_area_pixels=34277, mask_path=/home/songfei/catkin_ws/src/milk_vision_yolo11/outputs/mask_00_cell phone.png

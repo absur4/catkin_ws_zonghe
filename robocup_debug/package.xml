@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robocup_debug</name>
+  <version>1.0.0</version>
+  <description>分块调试脚本集 — 逐模块验证各子系统（无模拟数据，对接真实服务）</description>
+  <maintainer email="user@todo.todo">User</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>rospy</depend>
+  <depend>actionlib</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>robocup_msgs</depend>
+  <depend>robocup_executive</depend>
+  <depend>smach</depend>
+  <depend>smach_ros</depend>
+</package>

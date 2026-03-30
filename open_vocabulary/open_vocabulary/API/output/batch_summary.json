@@ -1,0 +1,98 @@
+[
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/cabit/c_1_Color.png",
+    "accepted": 2,
+    "all_detections": 4,
+    "elapsed_time_sec": 28.138,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabit/c_1_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabit/c_1_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/cabit/c_2_Color.png",
+    "accepted": 2,
+    "all_detections": 5,
+    "elapsed_time_sec": 20.624,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabit/c_2_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabit/c_2_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/cabit/c_3_Color.png",
+    "accepted": 1,
+    "all_detections": 6,
+    "elapsed_time_sec": 14.153,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabit/c_3_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabit/c_3_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/kitch/k_1_Color.png",
+    "accepted": 4,
+    "all_detections": 5,
+    "elapsed_time_sec": 24.69,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_1_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_1_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/kitch/k_2_Color.png",
+    "accepted": 5,
+    "all_detections": 6,
+    "elapsed_time_sec": 44.725,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_2_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_2_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/kitch/k_3_Color.png",
+    "accepted": 5,
+    "all_detections": 7,
+    "elapsed_time_sec": 32.942,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_3_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_3_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/kitch/k_4_Color.png",
+    "accepted": 4,
+    "all_detections": 4,
+    "elapsed_time_sec": 84.781,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_4_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_4_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/kitch/k_5_Color.png",
+    "accepted": 4,
+    "all_detections": 5,
+    "elapsed_time_sec": 121.738,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_5_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/kitch/k_5_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/surface/s_1_Color.png",
+    "accepted": 1,
+    "all_detections": 2,
+    "elapsed_time_sec": 108.136,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_1_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_1_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/surface/s_2_Color.png",
+    "accepted": 2,
+    "all_detections": 3,
+    "elapsed_time_sec": 119.486,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_2_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_2_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/surface/s_3_Color.png",
+    "accepted": 2,
+    "all_detections": 4,
+    "elapsed_time_sec": 27.871,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_3_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_3_Color_siglip.json"
+  },
+  {
+    "image": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/photos/test/surface/s_4_Color.png",
+    "accepted": 3,
+    "all_detections": 5,
+    "elapsed_time_sec": 116.849,
+    "output": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_4_Color_siglip.jpg",
+    "json": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/surface/s_4_Color_siglip.json"
+  }
+]

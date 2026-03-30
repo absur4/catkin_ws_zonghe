@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robocup_home_meta</name>
+  <version>1.0.0</version>
+  <description>Meta-package for RoboCup@Home Pick and Place system</description>
+  <maintainer email="user@todo.todo">User</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>robocup_msgs</exec_depend>
+  <exec_depend>robocup_perception</exec_depend>
+  <exec_depend>robocup_manipulation</exec_depend>
+  <exec_depend>robocup_navigation</exec_depend>
+  <exec_depend>robocup_executive</exec_depend>
+  <exec_depend>robocup_hri</exec_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

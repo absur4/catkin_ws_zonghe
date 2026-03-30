@@ -1,0 +1,4 @@
+<launch>
+    <node name="map_server" pkg="map_server" type="map_server" 
+          args="/home/songfei/tracer_ws/src/tracer_ros/tracer_bringup/map/sf_1.yaml"/>
+</launch>

@@ -1,0 +1,10 @@
+开启摄像头：roslaunch realsense2_camera rs_camera.launch align_depth:=true
+开启demo,开启执行规划：ganzhi) songfei@songfei-OMEN-by-HP-Gaming-Laptop-16-k0xxx:~/catkin_ws$   rosrun robocup_executive grasp_only_vision.py \
+>     _target_name:=milk \
+>     _motion/enable:=true \
+>     _motion/camera_frame:=camera_color_frame \
+>     _rgb_topic:=/camera/color/image_raw \
+>     _depth_topic:=/camera/aligned_depth_to_color/image_raw \
+>     _require_depth:=true
+
+grasp_only_vision.py 保存在了下载里面

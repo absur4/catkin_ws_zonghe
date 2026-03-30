@@ -1,0 +1,10 @@
+# 柜子层板检测服务
+sensor_msgs/Image rgb_image
+sensor_msgs/Image depth_image
+sensor_msgs/PointCloud2 point_cloud  # 可选点云数据
+string cabinet_prompt           # 柜子检测提示词 (如 "cabinet. shelf.")
+int32 num_shelves_hint          # 预期层数 (用于等分，当未检测到层板线时)
+---
+ShelfDetectionResult shelf_result
+bool success
+string message

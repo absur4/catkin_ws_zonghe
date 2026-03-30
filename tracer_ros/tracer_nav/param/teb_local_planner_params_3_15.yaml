@@ -1,0 +1,54 @@
+TebLocalPlannerROS:
+  odom_topic: /odometry/filtered
+  map_frame: map
+
+  # === 机器人轮廓与安全距离 ===
+  footprint_model: 
+    type: "polygon"
+    vertices: [[0.35, 0.4], [0.35, -0.35], [-0.35, -0.35], [-0.35, 0.4]]
+  
+  min_obstacle_dist: 0.05
+  inflation_dist: 0.1
+  include_costmap_obstacles: True
+  costmap_obstacles_behind_robot_dist: 1.0
+  obstacle_poses_affected: 30
+
+  # === 速度与加速度 ===
+  max_vel_x: 0.3
+  max_vel_x_backwards: 0.05
+  max_vel_theta: 1.0
+  acc_lim_x: 0.5
+  acc_lim_theta: 1.0
+  min_turning_radius: 0.0
+
+  # === 目标容差 ===
+  xy_goal_tolerance: 0.1
+  yaw_goal_tolerance: 0.1
+  free_goal_vel: False
+
+  # === 轨迹规划 ===
+  teb_autosize: True
+  dt_ref: 0.3
+  dt_hysteresis: 0.1
+  max_global_plan_lookahead_dist: 3.0
+  feasibility_check_no_poses: 4
+
+  # === 权重优化 ===
+  weight_max_vel_x: 2
+  weight_max_vel_theta: 1
+  weight_acc_lim_x: 1
+  weight_acc_lim_theta: 1
+  weight_kinematics_nh: 1000
+  weight_kinematics_forward_drive: 20
+  weight_kinematics_turning_radius: 1
+  weight_optimaltime: 1
+  
+
+  enable_homotopy_class_planning: False
+  enable_multithreading: True
+  shrink_horizon_backup: True
+  oscillation_recovery: False
+  # 👇👇👇 核心修改在这里 👇👇👇
+  weight_obstacle: 2000            # 从50提高到100，极度厌恶碰到0.1m的硬边界
+  weight_inflation: 100.0          # 【新增！】给0.4m的软边界打足气！让它产生强烈的排斥力
+  # 👆👆👆 核心修改在这里 👆👆👆

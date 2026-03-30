@@ -1,0 +1,201 @@
+# Pick and Place任务配置文件
+# 定义任务执行的所有参数
+
+# ========== 物品检测配置 ==========
+detection:
+  # 目标物品类别列表
+  target_classes:
+    - cup
+    - plate
+    - bowl
+    - spoon
+    - fork
+    - knife
+    - glass
+    - mug
+    - apple
+    - banana
+    - bread
+    - milk
+    - juice
+    - bottle
+    - wrapper
+    - tissue
+    - napkin
+    - paper
+
+  # 检测置信度阈值
+  confidence_threshold: 0.3
+
+  # 最小物体尺寸（像素）
+  min_bbox_size: 50
+
+# ========== 抓取配置 ==========
+grasp:
+  # 最大重试次数
+  max_retries: 3
+
+  # 接近距离（米）
+  approach_distance: 0.15
+
+  # 撤退距离（米）
+  retreat_distance: 0.15
+
+  # 抬升高度（米）
+  lift_height: 0.10
+
+  # 预抓取停留时间（秒）
+  pre_grasp_pause: 0.5
+
+  # 抓取后停留时间（秒）
+  post_grasp_pause: 1.0
+
+  # 默认夹爪宽度（米）
+  default_gripper_width: 0.05
+
+  # 抓取策略
+  strategies:
+    - auto      # 自动选择
+    - top       # 从上方抓取
+    - side      # 从侧面抓取
+
+# ========== 放置配置 ==========
+place:
+  # 最大重试次数
+  max_retries: 2
+
+  # 放置高度偏移（米）
+  place_height_offset: 0.05
+
+  # 放置前停留时间（秒）
+  pre_place_pause: 0.5
+
+  # 放置后停留时间（秒）
+  post_place_pause: 0.5
+
+  # 柜子放置配置
+  cabinet:
+    default_layer: 1          # 默认层数（从下往上）
+    layer_height: 0.30        # 层间距（米）
+    safe_clearance: 0.08      # 安全间隙（米）
+
+# ========== 导航配置 ==========
+navigation:
+  # 导航超时（秒）
+  timeout: 120.0
+
+  # 重试次数
+  retry_attempts: 2
+
+  # 目标容差
+  goal_tolerance:
+    xy: 0.1      # 位置容差（米）
+    yaw: 0.2     # 角度容差（弧度）
+
+# ========== 任务执行配置 ==========
+task:
+  # 最大处理物品数（规则书：1 cutlery + 1 mug + 1 plate + 1 trash + 2 other + 1 floor = 7件）
+  max_objects: 7
+
+  # 总任务超时（秒）（规则书最大时长 7 分钟 = 420 秒）
+  total_timeout: 420.0
+
+  # 单个物品处理超时（秒）
+  object_timeout: 120.0
+
+  # 是否启用语音确认
+  enable_speech_confirmation: false
+
+  # 垃圾类关键词（Setup Days 赛前通过 rosparam 覆盖）
+  # 示例: rosparam set /object_classifier/trash_keywords "[bottle]"
+  trash_keywords: ['apple']
+
+# ========== 功能开关（顶层，供状态机通过 ~xxx 直接读取） ==========
+# 是否启用早餐准备功能（规则书 Main Goal 之一，默认开启）
+enable_breakfast_serving: true
+
+# 感知公示开关（规则书 Rule #11）
+communicate_perception: true
+
+# ========== 超时设置 ==========
+timeouts:
+  # 检测超时（秒）
+  detection_timeout: 10.0
+
+  # 抓取超时（秒）
+  grasp_timeout: 60.0
+
+  # 放置超时（秒）
+  place_timeout: 60.0
+
+  # 导航超时（秒）
+  navigation_timeout: 120.0
+
+  # 服务调用超时（秒）
+  service_timeout: 5.0
+
+# ========== 早餐配置 ==========
+breakfast:
+  # 早餐物品（对齐 rulebook2026 §5.2）
+  items:
+    - name: "bowl"
+      location: "kitchen_surface"   # 规则书：bowl/spoon 在厨房台面
+    - name: "spoon"
+      location: "kitchen_surface"
+    - name: "cereal"
+      location: "cabinet"           # 规则书：cereal/milk 在柜子内
+    - name: "milk"
+      location: "cabinet"
+
+  # 摆放目标位置（已清空的餐桌）
+  serving_location: "dining_table"
+
+  # 摆放顺序（bowl 先放，spoon 紧靠 bowl；cereal 后放，milk 紧靠 cereal）
+  serving_order:
+    - bowl
+    - spoon
+    - cereal
+    - milk
+
+  # 相邻物品间距（米）：spoon 在 bowl 右侧，cereal 在 milk 左侧
+  serving_offsets:
+    spoon:  [0.10, 0.0]   # 相对 bowl 偏移 [x, y]（米）
+    cereal: [0.0, 0.0]    # cereal 独立放置
+    milk:   [-0.10, 0.0]  # 相对 cereal 偏移（cereal 在右）
+  item_spacing: 0.15      # 每件物品相对桌中心的累加偏移（米）
+
+# ========== 错误处理配置 ==========
+error_handling:
+  # 失败后继续执行
+  continue_on_failure: true
+
+  # 最大连续失败次数
+  max_consecutive_failures: 3
+
+  # 是否记录失败物品
+  log_failed_objects: true
+
+  # 失败后是否返回home
+  return_home_on_failure: false
+
+# ========== 日志配置 ==========
+logging:
+  # 日志级别 (DEBUG, INFO, WARN, ERROR)
+  level: INFO
+
+  # 是否保存日志文件
+  save_to_file: true
+
+  # 日志文件路径
+  log_file: "/tmp/pick_place_task.log"
+
+  # 是否记录ROS bag
+  record_rosbag: false
+
+  # ROS bag话题
+  rosbag_topics:
+    - /tf
+    - /tf_static
+    - /camera/color/image_raw
+    - /camera/aligned_depth_to_color/image_raw
+    - /joint_states

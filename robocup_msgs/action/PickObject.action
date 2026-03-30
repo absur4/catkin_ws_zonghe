@@ -1,0 +1,12 @@
+# Goal
+DetectedObject target_object
+string grasp_strategy           # "top_down", "side", "adaptive"
+---
+# Result
+bool success
+string message
+geometry_msgs/Pose picked_pose
+---
+# Feedback
+string current_phase            # "approaching", "grasping", "lifting", "retracting"
+float32 progress                # 0.0 ~ 1.0

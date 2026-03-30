@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 感知系统Launch文件 -->
+  <!-- 启动所有感知相关服务：物体检测、分类、抓取姿态计算等 -->
+
+  <!-- 加载相机参数 -->
+  <arg name="camera_fx" default="1230.0"/>
+  <arg name="camera_fy" default="922.5"/>
+  <arg name="camera_cx" default="640.0"/>
+  <arg name="camera_cy" default="360.0"/>
+  <arg name="depth_scale" default="0.001"/>
+
+  <!-- 启动物体检测服务 -->
+  <node pkg="robocup_perception" type="object_detector_server.py" name="object_detector_server" output="screen">
+    <param name="camera_intrinsics/fx" value="$(arg camera_fx)"/>
+    <param name="camera_intrinsics/fy" value="$(arg camera_fy)"/>
+    <param name="camera_intrinsics/cx" value="$(arg camera_cx)"/>
+    <param name="camera_intrinsics/cy" value="$(arg camera_cy)"/>
+    <param name="depth_scale" value="$(arg depth_scale)"/>
+  </node>
+
+  <!-- 启动柜子检测服务 -->
+  <node pkg="robocup_perception" type="shelf_detector_server.py" name="shelf_detector_server" output="screen"/>
+
+  <!-- 启动抓取姿态计算服务 -->
+  <node pkg="robocup_perception" type="grasp_pose_computer.py" name="grasp_pose_computer" output="screen">
+    <param name="approach_distance" value="0.15"/>
+    <param name="lift_height" value="0.10"/>
+  </node>
+
+  <!-- 启动放置姿态计算服务 -->
+  <node pkg="robocup_perception" type="place_pose_computer.py" name="place_pose_computer" output="screen"/>
+
+  <!-- 启动物品分类服务 -->
+  <node pkg="robocup_perception" type="object_classifier.py" name="object_classifier" output="screen">
+    <param name="classification_rules" value="$(find robocup_perception)/config/classification_rules.yaml"/>
+  </node>
+
+  <node pkg="robocup_perception" type="visual_servoing.py" name="visual_servoing" output="screen" required="false"/>
+
+</launch>

@@ -1,0 +1,12 @@
+pick_place_run_vision:
+  camera_intrinsics:
+    fx: 1230.0
+    fy: 922.5
+    cx: 640.0
+    cy: 360.0
+  depth_scale: 0.001
+  camera_frame_id: camera_color_optical_frame
+  rgb_topic: /camera/color/image_raw
+  depth_topic: /camera/depth/image_rect_raw
+  require_depth: false
+  default_object_z: 0.30

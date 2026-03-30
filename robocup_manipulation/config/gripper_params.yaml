@@ -1,0 +1,40 @@
+# 夹爪控制参数
+
+# 夹爪物理参数
+gripper:
+  max_opening: 0.07      # 最大开度（米）
+  min_opening: 0.0       # 最小开度（米）
+
+  # 与MoveIt配合时需要乘以的倍数
+  # 如果在MoveIt中夹爪范围是0-0.035，而实际是0-0.07，则设为2
+  value_multiple: 2
+
+# 夹爪力度参数（牛顿或归一化值，取决于硬件）
+effort:
+  max_effort: 100.0      # 最大力度
+  min_effort: 10.0       # 最小力度
+  default_grasp: 80.0    # 默认抓取力度
+  delicate_grasp: 40.0   # 轻柔抓取力度
+  firm_grasp: 100.0      # 牢固抓取力度
+
+# 不同物体类型的夹爪参数
+object_specific:
+  # 餐具（硬质物体）
+  utensil:
+    width: 0.03
+    effort: 80.0
+
+  # 食物（软质物体）
+  food:
+    width: 0.04
+    effort: 40.0
+
+  # 垃圾（不规则物体）
+  trash:
+    width: 0.05
+    effort: 60.0
+
+  # 默认参数
+  default:
+    width: 0.04
+    effort: 60.0

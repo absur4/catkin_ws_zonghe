@@ -1,0 +1,17 @@
+<launch>
+   
+    <!-- 设置地图的配置文件 -->
+    <include file="$(find livox_ros_driver2)/launch_ROS1/mid360_to_laserscan.launch" />
+    <arg name="map" default="map.yaml" />
+    <!-- 运行地图服务器，并且加载设置的地图-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find tracer_nav)/maps/$(arg map)"/>
+    <!-- 启动AMCL节点 -->
+    <include file="$(find tracer_nav)/launch/amcl.launch" />
+   
+
+    <!-- 运行move_base节点 -->
+    <include file="$(find tracer_nav)/launch/move_base.launch" />
+    
+    <!-- 打开rviz -->
+    
+</launch>

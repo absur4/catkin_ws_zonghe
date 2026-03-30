@@ -1,0 +1,32 @@
+<launch>
+  <!-- 地图加载 -->
+  <node pkg="map_server" type="map_server" name="map_server" args="$(find turtlebot3_sim_test)/maps/map.yaml"/>  <!-- //加载已经扫描好的地图 -->
+
+  <!-- 定位 -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <param name="odom_frame_id" value="odom"/>
+    <param name="base_frame_id" value="base_footprint"/>
+    <param name="global_frame_id" value="map"/>
+    <param name="scan_topic" value="scan"/>
+
+    <!-- 设置小车初始位姿 -->
+    <param name="initial_pose_x" value="0"/>
+    <param name="initial_pose_y" value="0"/>
+    <param name="initial_pose_a" value="0"/> 
+   
+    
+      <!-- 沿 x 轴正方向 -->
+  </node>
+
+  <!-- 路径规划 -->
+  <node pkg="move_base" type="move_base" name="move_base" output="screen">
+    <rosparam file="$(find turtlebot3_sim_test)/param/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+    <rosparam file="$(find turtlebot3_sim_test)/param/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+    <rosparam file="$(find turtlebot3_sim_test)/param/global_costmap_params.yaml" command="load"/>
+    <rosparam file="$(find turtlebot3_sim_test)/param/local_costmap_params.yaml" command="load"/>
+    <rosparam file="$(find turtlebot3_sim_test)/param/dwa_local_planner_params_waffle.yaml" command="load"/>
+  </node>
+
+  <!-- RViz -->
+  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find turtlebot3_sim_test)/rviz/turtlebot3_pi.rviz"/> -->
+</launch>

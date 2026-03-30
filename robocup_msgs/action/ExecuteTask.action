@@ -1,0 +1,13 @@
+# Goal
+string task_type                # "pick_and_place", "breakfast", "cleanup"
+string[] object_list            # 待处理物品列表
+---
+# Result
+bool success
+int32 objects_completed
+string[] failed_objects
+string summary
+---
+# Feedback
+TaskStatus status
+float32 overall_progress        # 0.0 ~ 1.0

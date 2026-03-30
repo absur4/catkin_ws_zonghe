@@ -1,0 +1,131 @@
+{
+  "point_cloud_3d": {
+    "pcd_path": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/table/2/2.pcd",
+    "surfaces": [
+      {
+        "index": 0,
+        "plane_equation": [
+          -0.0005549018701492623,
+          0.9997039828617112,
+          -0.024323625024773365,
+          0.43653725175451885
+        ],
+        "height_y_m": -0.401888,
+        "num_inliers": 4130,
+        "bounds_3d": {
+          "x_min": -1.034171,
+          "x_max": 1.063336,
+          "y_min": -0.411814,
+          "y_max": -0.391822,
+          "z_min": 1.034333,
+          "z_max": 1.606
+        },
+        "surface_area_m2": 0.723252,
+        "matched_2d_layer": 1
+      },
+      {
+        "index": 1,
+        "plane_equation": [
+          0.0004094537342063593,
+          0.9999914339201463,
+          -0.004118790352657443,
+          0.051179587044101575
+        ],
+        "height_y_m": -0.044813,
+        "num_inliers": 3905,
+        "bounds_3d": {
+          "x_min": -1.085365,
+          "x_max": 1.141834,
+          "y_min": -0.05576,
+          "y_max": -0.035838,
+          "z_min": 0.756,
+          "z_max": 1.674
+        },
+        "surface_area_m2": 1.162406,
+        "matched_2d_layer": 2
+      },
+      {
+        "index": 2,
+        "plane_equation": [
+          -0.0004202570221811732,
+          0.9999979566228709,
+          -0.0019774059062580736,
+          -0.3118103341524243
+        ],
+        "height_y_m": 0.314693,
+        "num_inliers": 4435,
+        "bounds_3d": {
+          "x_min": -1.13509,
+          "x_max": 1.289893,
+          "y_min": 0.305159,
+          "y_max": 0.325149,
+          "z_min": 0.873214,
+          "z_max": 1.935
+        },
+        "surface_area_m2": 1.7064,
+        "matched_2d_layer": 3
+      }
+    ],
+    "placement_points": [
+      {
+        "surface_index": 2,
+        "position_3d": [
+          -0.57009,
+          0.314693,
+          1.193214
+        ],
+        "free_area_m2": 0.002,
+        "rect_bounds_3d": {
+          "x_min": -0.59509,
+          "x_max": -0.54509,
+          "z_min": 1.173214,
+          "z_max": 1.213214,
+          "y": 0.314693
+        },
+        "projected_2d": {
+          "u": 52,
+          "v": 603
+        }
+      }
+    ]
+  },
+  "image_2d": {
+    "cabinet": {
+      "bbox": [
+        373,
+        2,
+        1090,
+        717
+      ]
+    },
+    "shelf_lines_y": [
+      235,
+      442,
+      694
+    ],
+    "shelf_layers": [
+      {
+        "layer": 1,
+        "y_top": 2,
+        "y_bottom": 235
+      },
+      {
+        "layer": 2,
+        "y_top": 235,
+        "y_bottom": 442
+      },
+      {
+        "layer": 3,
+        "y_top": 442,
+        "y_bottom": 717
+      }
+    ],
+    "num_layers": 3,
+    "objects": []
+  },
+  "surface_layer_mapping": {
+    "1": 2,
+    "0": 1,
+    "2": 3
+  }
+}

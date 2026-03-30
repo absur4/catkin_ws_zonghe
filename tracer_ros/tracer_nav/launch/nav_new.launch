@@ -1,0 +1,33 @@
+<launch>
+<!-- 本启动文件是为了配合优化后的导航参数使用的（也就是无地图的导航的参数，但是本文件是有地图 -->
+    <include file="$(find livox_ros_driver2)/launch_ROS1/mid360_to_laserscan.launch" />
+
+    <arg name="map" default="map.yaml" />
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find tracer_nav)/maps/$(arg map)"/>
+
+    <include file="$(find tracer_nav)/launch/amcl.launch" />
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <!-- costmap 公共配置 -->
+        <rosparam file="$(find tracer_nav)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find tracer_nav)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find tracer_nav)/param/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find tracer_nav)/param/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find tracer_nav)/param/dwa_local_planner_params.yaml" command="load" />
+        <param name="base_global_planner" value="global_planner/GlobalPlanner" /> 
+    	<param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+
+        <!-- frame 再明确一下也可以 -->
+        <param name="global_costmap/global_frame" value="map"/>
+        <param name="global_costmap/robot_base_frame" value="base_footprint"/>
+        <param name="local_costmap/global_frame" value="odom"/>
+        <param name="local_costmap/robot_base_frame" value="base_footprint"/>
+    </node>
+        <node name="navigation_monitor" pkg="tracer_nav" type="navigation_monitor.py" output="screen">
+        <param name="still_timeout" value="5.0"/>
+        <param name="forward_distance" value="0.4"/>
+        <param name="forward_width" value="0.2"/>
+        <param name="move_distance" value="0.1"/>
+    </node>
+    
+    </launch>

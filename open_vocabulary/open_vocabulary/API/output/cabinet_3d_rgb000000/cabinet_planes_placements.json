@@ -1,0 +1,121 @@
+{
+  "image_path": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/rgb_depth/rgb/rgb_000000.png",
+  "depth_path": "/Users/zhanghanyu/Desktop/objects/photo_rgb_depth/rgb_depth/depth/depth_000000.png",
+  "cabinet_bbox": [
+    385,
+    1,
+    972,
+    718
+  ],
+  "shelf_layers": [
+    {
+      "layer": 1,
+      "y_top": 1,
+      "y_bottom": 143
+    },
+    {
+      "layer": 2,
+      "y_top": 143,
+      "y_bottom": 357
+    },
+    {
+      "layer": 3,
+      "y_top": 357,
+      "y_bottom": 573
+    },
+    {
+      "layer": 4,
+      "y_top": 573,
+      "y_bottom": 718
+    }
+  ],
+  "planes": [
+    {
+      "index": 0,
+      "plane_equation": [
+        0.030350630628389285,
+        0.9993535865841767,
+        0.019267802152851215,
+        0.39209813585960246
+      ],
+      "height_y_m": -0.4281557794464605,
+      "num_inliers": 4844,
+      "bounds_3d": {
+        "x_min": -0.31389731198777127,
+        "x_max": 0.5075594819088353,
+        "y_min": -0.44957328726351,
+        "y_max": -0.40683651109970265,
+        "z_min": 1.5080000162124634,
+        "z_max": 1.8440001010894775
+      },
+      "surface_area_m2": 0.22194189984199666,
+      "v_median_px": 158.0
+    },
+    {
+      "index": 1,
+      "plane_equation": [
+        0.001338771240670705,
+        0.9998942009516798,
+        -0.01448428778941843,
+        0.0656191566623878
+      ],
+      "height_y_m": -0.04179888272513802,
+      "num_inliers": 1990,
+      "bounds_3d": {
+        "x_min": -0.42914811168229977,
+        "x_max": 0.5329308492366291,
+        "y_min": -0.05223483469823588,
+        "y_max": -0.03265449725241491,
+        "z_min": 1.383000095685323,
+        "z_max": 1.8390001058578491
+      },
+      "surface_area_m2": 0.38272346550108227,
+      "v_median_px": 365.0
+    },
+    {
+      "index": 2,
+      "plane_equation": [
+        0.048777448346993706,
+        0.9862722488318225,
+        0.1577587135944511,
+        -0.5598137648423085
+      ],
+      "height_y_m": 0.2918292082065416,
+      "num_inliers": 7428,
+      "bounds_3d": {
+        "x_min": -0.36723686107505615,
+        "x_max": 0.5329838738252516,
+        "y_min": 0.22326153659598436,
+        "y_max": 0.3564777582360372,
+        "z_min": 1.4820001125335693,
+        "z_max": 1.9170000553131104
+      },
+      "surface_area_m2": 0.363446409762069,
+      "v_median_px": 542.0
+    }
+  ],
+  "placement_points": [
+    {
+      "surface_index": 2,
+      "position_3d_m": [
+        -0.30223686107505615,
+        0.2918292082065416,
+        1.5070001125335692
+      ],
+      "free_area_m2": 0.0068000000000000005,
+      "rect_bounds_3d_m": {
+        "x_min": -0.30723686107505616,
+        "x_max": -0.13723686107505614,
+        "z_min": 1.5020001125335694,
+        "z_max": 1.5420001125335694,
+        "y": 0.2918292082065416
+      }
+    }
+  ],
+  "outputs": {
+    "shelf_lines_image": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabinet_3d_rgb000000/shelf_lines.jpg",
+    "overlay_image": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabinet_3d_rgb000000/cabinet_3d_overlay.jpg",
+    "planes_colored_ply": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabinet_3d_rgb000000/cabinet_planes_colored.ply",
+    "planes_with_placements_ply": "/Users/zhanghanyu/Desktop/objects/open_vocabulary/API/output/cabinet_3d_rgb000000/cabinet_planes_with_placements.ply"
+  }
+}

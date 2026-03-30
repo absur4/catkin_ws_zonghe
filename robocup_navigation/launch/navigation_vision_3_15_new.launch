@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 仅启动虚拟导航服务器（不启动真实导航/底盘） -->
+
+  <!-- 加载预定义位置配置（供虚拟导航打印/回传位姿） -->
+  <rosparam file="$(find robocup_navigation)/config/locations.yaml" command="load" ns="navigation"/>
+
+  <!-- 启动虚拟导航动作服务器 -->
+  <node pkg="robocup_navigation" type="navigation_action_server_3_15_new.py" name="navigation_action_server_mock" output="screen">
+    <param name="locations_file" value="$(find robocup_navigation)/config/locations.yaml"/>
+    <param name="fake_travel_time" value="2.0"/>
+    <param name="accept_unknown" value="true"/>
+  </node>
+
+  <!-- 保持与原导航 launch 一致的参数加载（可选） -->
+  <rosparam file="$(find robocup_executive)/config/task_config.yaml"
+            command="load"
+            ns="pick_place_dry_run"/>
+
+</launch>

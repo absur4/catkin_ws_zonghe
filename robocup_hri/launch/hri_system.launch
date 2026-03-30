@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- HRI系统启动文件（预留） -->
+  <!-- 后续可添加TTS、ASR等节点 -->
+</launch>
